@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackley & Associates Architects Inc</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+        body {
+            font-family: 'Marcellus', serif;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header styling */
+        header {
+            width: 80%;
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Logo styling */
+        .logo img {
+            height: 45px;
+        }
+
+        /* Navigation styling */
+        .nav-buttons {
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            font-family: 'Marcellus', serif;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #333;
+            font-size: 12px;
+        }
+
+        /* Footer styling */
+        footer {
+            width: 80%;
+            margin-top: auto;
+            padding: 20px;
+            font-family: 'Marcellus', serif;
+            font-size: 12px;
+            color: #757575;
+            text-align: center;
+        }
+
+        /* Grid container styling */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        /* Grid item styling */
+        .grid-item {
+            width: 100%;
+            padding-top: 100%;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+
+        /* Darken image on hover */
+        .grid-item:hover img {
+            filter: brightness(0.9);
+        }
+
+        /* Page content styling */
+        .content-page {
+            display: none;
+            width: 80%;
+            padding: 40px;
+            font-family: 'Marcellus', serif;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* About content styling with reduced width */
+        #about-content {
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        /* Centered contact content styling */
+        #contact-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Marcellus', serif;
+        }
+
+        /* Specific content page styling */
+        #contact-content, #about-content, #press-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with logo and navigation buttons -->
+    <header>
+        <div class="logo">
+            <a href="#" onclick="showHome()"><img src="logo.png" alt="Hackley & Associates Logo"></a>
+        </div>
+        <div class="nav-buttons">
+            <a href="#" onclick="showContent('contact')">Contact</a>
+            <a href="#" onclick="showContent('about')">About</a>
+            <a href="#" onclick="showContent('press')">Press</a>
+        </div>
+    </header>
+
+    <!-- Main grid container for images -->
+    <div class="grid-container" id="home">
+        <a href="project1.html" class="grid-item">
+            <img src="images/project1.jpg" alt="Project 1">
+        </a>
+        <a href="project2.html" class="grid-item">
+            <img src="images/project2.jpg" alt="Project 2">
+        </a>
+        <a href="project3.html" class="grid-item">
+            <img src="images/project3.jpg" alt="Project 3">
+        </a>
+        <a href="project4.html" class="grid-item">
+            <img src="images/project4.jpg" alt="Project 4">
+        </a>
+        <a href="project5.html" class="grid-item">
+            <img src="images/project5.jpg" alt="Project 5">
+        </a>
+        <a href="project6.html" class="grid-item">
+            <img src="images/project6.jpg" alt="Project 6">
+        </a>
+        <a href="project7.html" class="grid-item">
+            <img src="images/Project7.jpg" alt="Project 6">
+        </a>
+        <a href="project8.html" class="grid-item">
+            <img src="images/Project8.JPG" alt="Project 6">
+        </a>
+        <a href="project9.html" class="grid-item">
+            <img src="images/Project9.jpg" alt="Project 6">
+        </a>
+        <!-- Additional grid items as needed -->
+    </div>
+
+    <!-- Contact Page Content -->
+    <div class="content-page" id="contact-content">
+        Hackley & Associates Architects, Inc | 440 Green Bay Road, Kenilworth, Illinois 60043 | Phone 847.853.8258
+    </div>
+
+    <!-- About Page Content -->
+    <div class="content-page" id="about-content">
+        Hackley & Associates specializes exclusively in residential projects, focusing on new constructions, additions, and renovations. Their design philosophy emphasizes “seamless” integration, ensuring that new elements blend indistinguishably with existing structures and the surrounding environment. Whether through a harmonious addition to a family home or a thoughtfully designed new residence, Hackley & Associates brings traditional architectural values to modern projects. This commitment to continuity provides clients with both aesthetic satisfaction and long-term value.
+    </div>
+
+    <!-- Press Page Content (acting as a placeholder for grid system) -->
+    <div class="grid-container" id="press-content">
+        <!-- Additional image items to be added as needed -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Hackley Architects ©2025
+    </footer>
+
+    <!-- JavaScript for page navigation -->
+    <script>
+        function showHome() {
+            document.getElementById('home').style.display = 'grid';
+            document.getElementById('contact-content').style.display = 'none';
+            document.getElementById('about-content').style.display = 'none';
+            document.getElementById('press-content').style.display = 'none';
+        }
+
+        function showContent(page) {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('contact-content').style.display = (page === 'contact') ? 'block' : 'none';
+            document.getElementById('about-content').style.display = (page === 'about') ? 'block' : 'none';
+            document.getElementById('press-content').style.display = (page === 'press') ? 'grid' : 'none';
+        }
+    </script>
+
+</body>
+</html>
